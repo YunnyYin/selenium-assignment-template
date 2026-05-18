@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // JUnit for testing
+    testImplementation 'junit:junit:4.13.2'
+    
+    // Selenium 4 (comes with Selenium Manager which auto-downloads drivers!)
+    testImplementation 'org.seleniumhq.selenium:selenium-java:4.18.1'
+    
+    // Logging for Selenium
+    testImplementation 'org.slf4j:slf4j-simple:2.0.12'
+}
+
+test {
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
